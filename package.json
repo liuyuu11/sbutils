@@ -1,0 +1,27 @@
+{
+  "name": "sbutils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snoobcn/sbutils.git"
+  },
+  "author": "snoob",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/snoobcn/sbutils/issues"
+  },
+  "homepage": "https://github.com/snoobcn/sbutils#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.8.0",
+    "jasmine-spec-reporter": "^4.2.1"
+  }
+}
