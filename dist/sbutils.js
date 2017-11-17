@@ -70,21 +70,44 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-var arrayEqual = __webpack_require__(1);
-
-module.exports = {
-	arrayEqual: arrayEqual
+/**
+ * 
+ * @desc  设置Cookie
+ * @author snoob
+ * @param {String} name 
+ * @param {String} value 
+ * @param {Number} days 
+ */
+module.exports = function (name, value, days) {
+  var date = new Date();
+  date.setDate(date.getDate() + days);
+  document.cookie = name + '=' + value + ';expires=' + date;
 };
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayEqual = __webpack_require__(2);
+var getCookie = __webpack_require__(3);
+var removeCookie = __webpack_require__(4);
+var setCookie = __webpack_require__(0);
+module.exports = {
+	arrayEqual: arrayEqual,
+	getCookie: getCookie,
+	removeCookie: removeCookie,
+	setCookie: setCookie
+};
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 /**
@@ -101,6 +124,42 @@ module.exports = function (arr1, arr2) {
     if (arr1[i] !== arr2[i]) return false;
   }
   return true;
+};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc 根据name读取cookie
+ * @author snoob
+ * @param  {String} name 
+ * @return {String}
+ */
+module.exports = function (name) {
+	var arr = document.cookie.replace(/\s/g, "").split(';');
+	for (var i = 0; i < arr.length; i++) {
+		var tempArr = arr[i].split('=');
+		if (tempArr[0] == name) {
+			return decodeURIComponent(tempArr[1]);
+		}
+	}
+	return '';
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var setCookie = __webpack_require__(0);
+/**
+ * @desc 根据name删除cookie
+ * @author snoob
+ * @param  {String} name 
+ */
+module.exports = function (name) {
+  // 设置已过期，系统会立刻删除cookie
+  setCookie(name, '1', -1);
 };
 
 /***/ })
