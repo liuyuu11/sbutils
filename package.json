@@ -1,41 +1,51 @@
 {
-  "name": "sbutils",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "node jasmine-runner.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/snoobcn/sbutils.git"
-  },
-  "author": "snoob",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/snoobcn/sbutils/issues"
-  },
-  "homepage": "https://github.com/snoobcn/sbutils#readme",
-  "dependencies": {
-    "browserify": "^14.5.0",
-    "document": "^0.4.7",
-    "karma-webpack": "^2.0.6",
-    "requirejs": "^2.3.5",
-    "webpack": "^3.8.1",
-    "window": "^4.2.2"
-  },
-  "devDependencies": {
-    "jasmine": "^2.8.0",
-    "jasmine-spec-reporter": "^4.2.1",
-    "karma": "^1.7.1",
-    "karma-browserify": "^5.1.2",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-firefox-launcher": "^1.0.1",
-    "karma-jasmine": "^1.1.0",
-    "karma-requirejs": "^1.1.0",
-    "karma-safari-launcher": "^1.0.0"
-  }
+	"name": "sbutils",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"test": "node jasmine-runner.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/snoobcn/sbutils.git"
+	},
+	"author": "snoob",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/snoobcn/sbutils/issues"
+	},
+	"homepage": "https://github.com/snoobcn/sbutils#readme",
+	"babel": {
+		"presets": [
+			"es2015"
+		]
+	},
+	"dependencies": {
+		"babel-loader": "^7.1.2",
+		"browserify": "^14.5.0",
+		"document": "^0.4.7",
+		"es2015": "0.0.0",
+		"karma-coverage": "^1.1.1",
+		"karma-webpack": "^2.0.6",
+		"requirejs": "^2.3.5",
+		"webpack": "^3.8.1",
+		"window": "^4.2.2"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"jasmine": "^2.8.0",
+		"jasmine-spec-reporter": "^4.2.1",
+		"karma": "^1.7.1",
+		"karma-browserify": "^5.1.2",
+		"karma-chrome-launcher": "^2.2.0",
+		"karma-firefox-launcher": "^1.0.1",
+		"karma-jasmine": "^1.1.0",
+		"karma-requirejs": "^1.1.0",
+		"karma-safari-launcher": "^1.0.0"
+	}
 }
