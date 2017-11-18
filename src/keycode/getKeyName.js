@@ -103,10 +103,11 @@ const keyCodeMap = {
 };
 /**
  * @desc 根据keycode获得键名
+ * @author snoob
  * @param  {Number} keycode 
  * @return {String}
  */
-module.exports = (keycode) => {
+module.exports = keycode => {
     if (keyCodeMap[keycode]) {
         return keyCodeMap[keycode];
     } else {

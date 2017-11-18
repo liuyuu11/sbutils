@@ -5,6 +5,7 @@ const setCookie = require('./cookie/setCookie');
 const getExplore = require('./device/getExplore');
 const getOS = require('./device/getOS');
 const getKeyName = require('./keycode/getKeyName');
+const isEmptyObj = require('./object/isEmptyObj');
 module.exports = {
 	arrayEqual,
 	getCookie,
@@ -12,5 +13,6 @@ module.exports = {
 	setCookie,
 	getExplore,
 	getOS,
-	getKeyName
+	getKeyName,
+	isEmptyObj
 }

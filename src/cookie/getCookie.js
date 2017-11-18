@@ -4,7 +4,7 @@
  * @param  {String} name 
  * @return {String}
  */
-module.exports = (name) => {
+module.exports = name => {
 	let arr = document.cookie.replace(/\s/g, "").split(';');
 	for (let i = 0; i < arr.length; i++) {
 		let tempArr = arr[i].split('=');

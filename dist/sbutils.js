@@ -102,6 +102,7 @@ var setCookie = __webpack_require__(0);
 var getExplore = __webpack_require__(5);
 var getOS = __webpack_require__(6);
 var getKeyName = __webpack_require__(7);
+var isEmptyObj = __webpack_require__(8);
 module.exports = {
 	arrayEqual: arrayEqual,
 	getCookie: getCookie,
@@ -109,7 +110,8 @@ module.exports = {
 	setCookie: setCookie,
 	getExplore: getExplore,
 	getOS: getOS,
-	getKeyName: getKeyName
+	getKeyName: getKeyName,
+	isEmptyObj: isEmptyObj
 };
 
 /***/ }),
@@ -329,6 +331,7 @@ var keyCodeMap = {
 };
 /**
  * @desc 根据keycode获得键名
+ * @author snoob
  * @param  {Number} keycode 
  * @return {String}
  */
@@ -339,6 +342,23 @@ module.exports = function (keycode) {
         console.log('Unknow Key(Key Code:' + keycode + ')');
         return '';
     }
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/**
+ * @desc   判断obj是否为空
+ * @author snoob
+ * @param  {Object} obj
+ * @return {Boolean}
+ */
+module.exports = function (obj) {
+    if (!obj || (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) !== 'object' || Array.isArray(obj)) return false;
+    return !Object.keys(obj).length;
 };
 
 /***/ })
