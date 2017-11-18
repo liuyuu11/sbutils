@@ -2,7 +2,6 @@ describe('Cookie API:', function () {
 	let setCookie = sbutils.setCookie,
 		getCookie = sbutils.getCookie,
 		removeCookie = sbutils.removeCookie;
-
 	describe('--> setCookie() and setCookie()', function () {
 		it('when setCookie is string , if run setCookie("aa","bb") , getCookie("aa") should get "bb"', function () {
 			setCookie("aa", "bb")
@@ -19,7 +18,6 @@ describe('Cookie API:', function () {
 		})
 
 	})
-
 	describe('--> removeCookie()', function () {
 		it('if run removeCookie("aa") and then getCookie("aa") should be "" ', function () {
 			expect(getCookie("aa")).toEqual('bb');

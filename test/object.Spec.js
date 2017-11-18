@@ -1,6 +1,6 @@
 describe('Object API:', function () {
+	let isEmptyObj = sbutils.isEmptyObj;
 	describe('--> isEmptyObj() ', function () {
-		let isEmptyObj = sbutils.isEmptyObj;
 		it('isEmptyObj({}) should return true', function () {
 			expect(isEmptyObj({})).toBe(true);
 		});

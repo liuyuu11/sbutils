@@ -8,6 +8,8 @@ const getKeyName = require('./keycode/getKeyName');
 const isEmptyObj = require('./object/isEmptyObj');
 const randomColor = require('./random/randomColor');
 const randomNum = require('./random/randomNum');
+const queryParse = require('./url/queryParse');
+const queryString = require('./url/queryString');
 module.exports = {
 	arrayEqual,
 	getCookie,
@@ -18,5 +20,7 @@ module.exports = {
 	getKeyName,
 	isEmptyObj,
 	randomColor,
-	randomNum
+	randomNum,
+	queryParse,
+	queryString
 }

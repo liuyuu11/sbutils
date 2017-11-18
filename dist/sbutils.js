@@ -105,6 +105,8 @@ var getKeyName = __webpack_require__(7);
 var isEmptyObj = __webpack_require__(8);
 var randomColor = __webpack_require__(9);
 var randomNum = __webpack_require__(10);
+var queryParse = __webpack_require__(11);
+var queryString = __webpack_require__(12);
 module.exports = {
 	arrayEqual: arrayEqual,
 	getCookie: getCookie,
@@ -115,7 +117,9 @@ module.exports = {
 	getKeyName: getKeyName,
 	isEmptyObj: isEmptyObj,
 	randomColor: randomColor,
-	randomNum: randomNum
+	randomNum: randomNum,
+	queryParse: queryParse,
+	queryString: queryString
 };
 
 /***/ }),
@@ -399,6 +403,50 @@ module.exports = function () {
   var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
 
   return Math.floor(min + Math.random() * (max - min));
+};
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc   url_query => obj
+ * @author snoob
+ * @param  {String} url  default: if null will set url use window.location.href
+ * @return {Object} 
+ */
+module.exports = function (url) {
+	var urlstring = url == null ? window.location.href : url;
+	var search = urlstring.substring(urlstring.lastIndexOf('?') + 1);
+	if (!search) {
+		return {};
+	}
+	return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+};
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc   obj => url_query
+ * @author snoob
+ * @param  {Object} obj 
+ * @return {String}
+ */
+module.exports = function (obj) {
+	if (!obj) return '';
+	var tmp = [];
+	for (var key in obj) {
+		var value = obj[key];
+		if (value instanceof Array) {
+			for (var i = 0; i < value.length; ++i) {
+				tmp.push(encodeURIComponent(key + '[' + i + ']') + '=' + encodeURIComponent(value[i]));
+			}
+		}
+		tmp.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
+	}
+	return tmp.join('&');
 };
 
 /***/ })

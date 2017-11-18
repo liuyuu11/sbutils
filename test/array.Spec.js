@@ -1,6 +1,6 @@
 describe('Array API:', function () {
+	let arrayEqual = sbutils.arrayEqual;
 	describe('--> arrayEqual() ', function () {
-		let arrayEqual = sbutils.arrayEqual;
 		it('arrayEqual([1, 2, 3], [1, 2, 3]) should return true', function () {
 			expect(arrayEqual([1, 2, 3], [1, 2, 3])).toBe(true);
 		});
