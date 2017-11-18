@@ -6,6 +6,8 @@ const getExplore = require('./device/getExplore');
 const getOS = require('./device/getOS');
 const getKeyName = require('./keycode/getKeyName');
 const isEmptyObj = require('./object/isEmptyObj');
+const randomColor = require('./random/randomColor');
+const randomNum = require('./random/randomNum');
 module.exports = {
 	arrayEqual,
 	getCookie,
@@ -14,5 +16,7 @@ module.exports = {
 	getExplore,
 	getOS,
 	getKeyName,
-	isEmptyObj
+	isEmptyObj,
+	randomColor,
+	randomNum
 }

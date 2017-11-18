@@ -103,6 +103,8 @@ var getExplore = __webpack_require__(5);
 var getOS = __webpack_require__(6);
 var getKeyName = __webpack_require__(7);
 var isEmptyObj = __webpack_require__(8);
+var randomColor = __webpack_require__(9);
+var randomNum = __webpack_require__(10);
 module.exports = {
 	arrayEqual: arrayEqual,
 	getCookie: getCookie,
@@ -111,7 +113,9 @@ module.exports = {
 	getExplore: getExplore,
 	getOS: getOS,
 	getKeyName: getKeyName,
-	isEmptyObj: isEmptyObj
+	isEmptyObj: isEmptyObj,
+	randomColor: randomColor,
+	randomNum: randomNum
 };
 
 /***/ }),
@@ -359,6 +363,42 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 module.exports = function (obj) {
     if (!obj || (typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) !== 'object' || Array.isArray(obj)) return false;
     return !Object.keys(obj).length;
+};
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc 随机生成颜色
+ * @author snoob
+ * @return {String}
+ */
+module.exports = function () {
+	var color = '',
+	    point = '0123456789ABCDEF';
+	while (color.length < 6) {
+		color += point[Math.floor(Math.random() * 16)];
+	}
+	return '#' + color;
+};
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc 生成指定范围随机数
+ * @author snoob
+ * @param  {Number} min 
+ * @param  {Number} max 
+ * @return {Number} 
+ */
+module.exports = function () {
+  var min = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+  return Math.floor(min + Math.random() * (max - min));
 };
 
 /***/ })
