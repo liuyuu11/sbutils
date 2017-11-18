@@ -1,5 +1,6 @@
 const arrayEqual = require('./array/arrayEqual');
 const isArrRepeat = require('./array/isArrRepeat');
+const removeItemArray = require('./array/removeItemArray');
 const getCookie = require('./cookie/getCookie');
 const removeCookie = require('./cookie/removeCookie');
 const setCookie = require('./cookie/setCookie');
@@ -16,6 +17,7 @@ const getMinOfArray = require('./math/getMinOfArray');
 module.exports = {
 	arrayEqual,
 	isArrRepeat,
+	removeItemArray,
 	getCookie,
 	removeCookie,
 	setCookie,

@@ -97,22 +97,24 @@ module.exports = function (name, value, days) {
 
 var arrayEqual = __webpack_require__(2);
 var isArrRepeat = __webpack_require__(3);
-var getCookie = __webpack_require__(4);
-var removeCookie = __webpack_require__(5);
+var removeItemArray = __webpack_require__(4);
+var getCookie = __webpack_require__(5);
+var removeCookie = __webpack_require__(6);
 var setCookie = __webpack_require__(0);
-var getExplore = __webpack_require__(6);
-var getOS = __webpack_require__(7);
-var getKeyName = __webpack_require__(8);
-var isEmptyObj = __webpack_require__(9);
-var randomColor = __webpack_require__(10);
-var randomNum = __webpack_require__(11);
-var queryParse = __webpack_require__(12);
-var queryString = __webpack_require__(13);
-var getMaxOfArray = __webpack_require__(14);
-var getMinOfArray = __webpack_require__(15);
+var getExplore = __webpack_require__(7);
+var getOS = __webpack_require__(8);
+var getKeyName = __webpack_require__(9);
+var isEmptyObj = __webpack_require__(10);
+var randomColor = __webpack_require__(11);
+var randomNum = __webpack_require__(12);
+var queryParse = __webpack_require__(13);
+var queryString = __webpack_require__(14);
+var getMaxOfArray = __webpack_require__(15);
+var getMinOfArray = __webpack_require__(16);
 module.exports = {
 	arrayEqual: arrayEqual,
 	isArrRepeat: isArrRepeat,
+	removeItemArray: removeItemArray,
 	getCookie: getCookie,
 	removeCookie: removeCookie,
 	setCookie: setCookie,
@@ -173,6 +175,26 @@ module.exports = function (arr) {
 /***/ (function(module, exports) {
 
 /**
+ * @desc 删除数组置指定项
+ * @author snoob
+ * @param {Array}
+ * @param {any}
+ * @return {Array}
+ */
+module.exports = function (arr, val) {
+    var array = arr;
+    var idx = array.indexOf(val);
+    if (idx > -1) {
+        array.splice(idx, 1);
+    }
+    return array;
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+/**
  * @desc 根据name读取cookie
  * @author snoob
  * @param  {String} name 
@@ -190,7 +212,7 @@ module.exports = function (name) {
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var setCookie = __webpack_require__(0);
@@ -205,7 +227,7 @@ module.exports = function (name) {
 };
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 /**
@@ -235,7 +257,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 /**
@@ -257,7 +279,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 var keyCodeMap = {
@@ -379,7 +401,7 @@ module.exports = function (keycode) {
 };
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -396,7 +418,7 @@ module.exports = function (obj) {
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /**
@@ -414,7 +436,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /**
@@ -432,7 +454,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /**
@@ -451,7 +473,7 @@ module.exports = function (url) {
 };
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 /**
@@ -476,7 +498,7 @@ module.exports = function (obj) {
 };
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 /**
@@ -491,7 +513,7 @@ module.exports = function (numArray) {
 };
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /**
