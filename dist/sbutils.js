@@ -96,19 +96,23 @@ module.exports = function (name, value, days) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayEqual = __webpack_require__(2);
-var getCookie = __webpack_require__(3);
-var removeCookie = __webpack_require__(4);
+var isArrRepeat = __webpack_require__(3);
+var getCookie = __webpack_require__(4);
+var removeCookie = __webpack_require__(5);
 var setCookie = __webpack_require__(0);
-var getExplore = __webpack_require__(5);
-var getOS = __webpack_require__(6);
-var getKeyName = __webpack_require__(7);
-var isEmptyObj = __webpack_require__(8);
-var randomColor = __webpack_require__(9);
-var randomNum = __webpack_require__(10);
-var queryParse = __webpack_require__(11);
-var queryString = __webpack_require__(12);
+var getExplore = __webpack_require__(6);
+var getOS = __webpack_require__(7);
+var getKeyName = __webpack_require__(8);
+var isEmptyObj = __webpack_require__(9);
+var randomColor = __webpack_require__(10);
+var randomNum = __webpack_require__(11);
+var queryParse = __webpack_require__(12);
+var queryString = __webpack_require__(13);
+var getMaxOfArray = __webpack_require__(14);
+var getMinOfArray = __webpack_require__(15);
 module.exports = {
 	arrayEqual: arrayEqual,
+	isArrRepeat: isArrRepeat,
 	getCookie: getCookie,
 	removeCookie: removeCookie,
 	setCookie: setCookie,
@@ -119,7 +123,9 @@ module.exports = {
 	randomColor: randomColor,
 	randomNum: randomNum,
 	queryParse: queryParse,
-	queryString: queryString
+	queryString: queryString,
+	getMaxOfArray: getMaxOfArray,
+	getMinOfArray: getMinOfArray
 };
 
 /***/ }),
@@ -147,6 +153,26 @@ module.exports = function (arr1, arr2) {
 /***/ (function(module, exports) {
 
 /**
+ * @desc 判断数组元素是否重复
+ * @author snoob
+ * @param {Array}
+ * @return {Boolean}
+ */
+module.exports = function (arr) {
+	var _arr = arr.sort();
+	for (var i = 0; i < _arr.length; i++) {
+		if (_arr[i] === _arr[i + 1]) {
+			return true;
+		}
+	}
+	return false;
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+/**
  * @desc 根据name读取cookie
  * @author snoob
  * @param  {String} name 
@@ -164,7 +190,7 @@ module.exports = function (name) {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var setCookie = __webpack_require__(0);
@@ -179,7 +205,7 @@ module.exports = function (name) {
 };
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 /**
@@ -209,7 +235,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 /**
@@ -231,7 +257,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 var keyCodeMap = {
@@ -353,7 +379,7 @@ module.exports = function (keycode) {
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -370,7 +396,7 @@ module.exports = function (obj) {
 };
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 /**
@@ -388,7 +414,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /**
@@ -406,7 +432,7 @@ module.exports = function () {
 };
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 /**
@@ -425,7 +451,7 @@ module.exports = function (url) {
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /**
@@ -447,6 +473,36 @@ module.exports = function (obj) {
 		tmp.push(encodeURIComponent(key) + '=' + encodeURIComponent(obj[key]));
 	}
 	return tmp.join('&');
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc 获取数组最大值
+ * @author snoob
+ * @param {Array}
+ * @return {Number}
+ */
+
+module.exports = function (numArray) {
+  return Math.max.apply(null, numArray);
+};
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc 获取数组最小值
+ * @author snoob
+ * @param {Array}
+ * @return {Number}
+ */
+
+module.exports = function (numArray) {
+  return Math.min.apply(null, numArray);
 };
 
 /***/ })

@@ -1,4 +1,5 @@
 const arrayEqual = require('./array/arrayEqual');
+const isArrRepeat = require('./array/isArrRepeat');
 const getCookie = require('./cookie/getCookie');
 const removeCookie = require('./cookie/removeCookie');
 const setCookie = require('./cookie/setCookie');
@@ -10,8 +11,11 @@ const randomColor = require('./random/randomColor');
 const randomNum = require('./random/randomNum');
 const queryParse = require('./url/queryParse');
 const queryString = require('./url/queryString');
+const getMaxOfArray = require('./math/getMaxOfArray');
+const getMinOfArray = require('./math/getMinOfArray');
 module.exports = {
 	arrayEqual,
+	isArrRepeat,
 	getCookie,
 	removeCookie,
 	setCookie,
@@ -22,5 +26,7 @@ module.exports = {
 	randomColor,
 	randomNum,
 	queryParse,
-	queryString
+	queryString,
+	getMaxOfArray,
+	getMinOfArray
 }
