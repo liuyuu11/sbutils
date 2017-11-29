@@ -69,6 +69,12 @@ module.exports = function (config) {
 
 		// Concurrency level
 		// how many browser should be started simultaneous
-		concurrency: Infinity
+		concurrency: Infinity,
+
+		// plugins : [
+		// 	'karma-junit-reporter',
+		// 	'karma-chrome-launcher',
+		// 	'karma-jasmine'
+		// 	],
 	})
 }
