@@ -111,6 +111,7 @@ var queryParse = __webpack_require__(13);
 var queryString = __webpack_require__(14);
 var getMaxOfArray = __webpack_require__(15);
 var getMinOfArray = __webpack_require__(16);
+var sigWord = __webpack_require__(17);
 module.exports = {
 	arrayEqual: arrayEqual,
 	isArrRepeat: isArrRepeat,
@@ -127,7 +128,8 @@ module.exports = {
 	queryParse: queryParse,
 	queryString: queryString,
 	getMaxOfArray: getMaxOfArray,
-	getMinOfArray: getMinOfArray
+	getMinOfArray: getMinOfArray,
+	sigWord: sigWord
 };
 
 /***/ }),
@@ -525,6 +527,29 @@ module.exports = function (numArray) {
 
 module.exports = function (numArray) {
   return Math.min.apply(null, numArray);
+};
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+/**
+ * @desc   寻找指定文本进行标识
+ * @author snoob
+ * @param {string} content 内容
+ * @param {array} wordArr 敏感词数组
+ * @param {string} leftSig 左标识
+ * @param {string} rightSig 右标识
+ * @return {string} 带标识的敏感词组
+ */
+module.exports = function (content, wordArr, leftSig, rightSig) {
+  var resultContent = content;
+  wordArr.forEach(function (val) {
+    resultContent = resultContent.replace(new RegExp(val, 'gm'), function (word) {
+      return leftSig + word + rightSig;
+    });
+  });
+  return resultContent;
 };
 
 /***/ })

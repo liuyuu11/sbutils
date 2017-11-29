@@ -14,6 +14,7 @@ const queryParse = require('./url/queryParse');
 const queryString = require('./url/queryString');
 const getMaxOfArray = require('./math/getMaxOfArray');
 const getMinOfArray = require('./math/getMinOfArray');
+const sigWord = require('./text/signWord');
 module.exports = {
 	arrayEqual,
 	isArrRepeat,
@@ -30,5 +31,6 @@ module.exports = {
 	queryParse,
 	queryString,
 	getMaxOfArray,
-	getMinOfArray
+	getMinOfArray,
+	sigWord
 }
